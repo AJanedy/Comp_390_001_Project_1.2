@@ -1,6 +1,3 @@
-from search_criteria import SearchCriteria
-
-
 def filter_meteor_data(meteor_search):
     """ calls the list building function associated with the given filter attribute criteria
         and returns the list assembled by that function """

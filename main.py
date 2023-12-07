@@ -1,9 +1,7 @@
 from data_crunchers import filter_meteor_data
 from file_operators import create_list_from_file
 from generate_output import generate_user_specified_output
-from user_input import (get_open_mode_from_user, get_attribute_from_user, get_target_file_from_user,
-                        get_lower_limit_from_user, get_upper_limit_from_user, get_output_option_from_user,
-                        go_again)
+from user_input import *
 from search_criteria import SearchCriteria
 from text_prompts import welcome_message
 

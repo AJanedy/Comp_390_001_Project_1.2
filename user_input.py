@@ -1,9 +1,8 @@
+from text_prompts import *
+from utility_functions import _string_is_numerical
 from search_criteria import SearchCriteria
 from color_class import Colors
-from text_prompts import (list_files_in_directory, open_mode_prompt, attribute_prompt,
-                          invalid_selection, lower_limit_prompt, quit_program, upper_limit_prompt,
-                          data_output_prompt, go_again_prompt)
-from utility_functions import _string_is_numerical
+
 
 
 def get_target_file_from_user():

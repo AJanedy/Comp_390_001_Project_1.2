@@ -1,4 +1,4 @@
-#pytest -v
+pytest -v
 git add .
 echo "enter a commit message:"
 read commit_comment

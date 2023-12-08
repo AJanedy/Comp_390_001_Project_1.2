@@ -63,6 +63,8 @@ def create_text_file(meteor_search, meteor_list):
         print_first_line_in_text_file(file, meteor_search)
         print_data_to_text_file(file, meteor_list)
 
+    return file_path
+
 
 def print_data_to_text_file(file, meteor_list):
     """ prints to the file a line for each meteor in the meteor_list.  each meteor attribute
@@ -111,13 +113,14 @@ def create_excel_file(meteor_search, meteor_list):
         containing each meteorite from the search criteria, then saves it to
          the subdirectory "excel_files" """
 
-    # FIXME: too long
     data_sheet, file_path, workbook = initialize_new_excel_file()
 
     populate_excel_sheet_header_row(data_sheet, meteor_search)
     populate_excel_sheet_data(data_sheet, meteor_list)
 
     workbook.save(file_path)
+
+    return file_path
 
 
 def populate_excel_sheet_data(data_sheet, meteor_list):

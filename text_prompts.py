@@ -78,9 +78,7 @@ def invalid_selection():
 def quit_program():
     """ prints the quit message and quits the program """
 
-    print("\nThank you for using the meteorite filtering program\n"
-          "Goodbye\n")
-    exit()
+    exit("\nExiting the program.")
 
 def go_again_prompt():
 

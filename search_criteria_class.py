@@ -1,4 +1,6 @@
 class SearchCriteria:
+    """ This is the SearchCriteria class definition
+        Contains variables associated with the attributes of the user's specific search """
     def __init__(self):
         self.filename: str = ''
         self.open_mode: chr = ''

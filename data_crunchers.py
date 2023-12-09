@@ -1,3 +1,16 @@
+"""
+data_crunchers.py
+
+This module contains functions for building lists associated with the user's
+specified search criteria.
+
+Functions:
+    filter_meteor_data() -> None
+    build_mass_list() -> list_of_meteors_by_mass: list[MeteorDataEntry]
+    build_year_list() -> list_of_meteors_by_year: list[MeteorDataEntry]
+"""
+
+
 def filter_meteor_data(meteor_search):
     """ calls the list building function associated with the given filter attribute criteria
         and returns the list assembled by that function """

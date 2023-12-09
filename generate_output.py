@@ -1,10 +1,30 @@
+"""
+generate_output.py
+
+This module contains functions for handling and printing data to either the terminal,
+a .txt file, or a .xls file.
+
+Functions:
+    generate_user_specified_output() -> None
+    print_header() -> None
+    print_data_to_terminal() -> None
+    create_text_file() -> None
+    create_excel_file() -> None
+    print_first_line_in_text_file() -> None
+    print_data_to_text_file() -> None
+    get_text_file_path() -> file_path: str
+    get_datetime_string() -> clean_timestamp_string: str
+    populate_excel_sheet_data() -> None
+    populate_excel_sheet_header_row() -> None
+    get_excel_file_path() -> file_path: str
+"""
+
 import os
 from xlwt import Workbook
-import search_criteria
 from datetime import datetime
 
 
-def generate_user_specified_output(meteor_search: search_criteria, meteor_list):
+def generate_user_specified_output(meteor_search, meteor_list):
     """ reads the output_option attribute from the class attributes of :param meteor_search
         and sends the :param meteor_list to the associated function for processing """
 
@@ -66,14 +86,14 @@ def create_text_file(meteor_search, meteor_list):
     return file_path
 
 
-def print_data_to_text_file(file, meteor_list):
-    """ prints to the file a line for each meteor in the meteor_list.  each meteor attribute
-        is separated by a tab character and a newline is placed after the final attribute """
-    for meteor in meteor_list:
-        all_data = vars(meteor)
-        for _, data in all_data.items():
-            file.write(f'{data.strip()}\t')
-        file.write('\n')
+def get_text_file_path():
+    """ builds the filepath for the program to create a new .txt file """
+
+    datetime_as_filename = get_datetime_string()
+    datetime_as_filename = datetime_as_filename + '.txt'
+    subdirectory = "text_files"
+    file_path = os.path.join(subdirectory, datetime_as_filename)
+    return file_path
 
 
 def print_first_line_in_text_file(file, meteor_search):
@@ -85,14 +105,14 @@ def print_first_line_in_text_file(file, meteor_search):
     file.write('\n')
 
 
-def get_text_file_path():
-    """ builds the filepath for the program to create a new .txt file """
-
-    datetime_as_filename = get_datetime_string()
-    datetime_as_filename = datetime_as_filename + '.txt'
-    subdirectory = "text_files"
-    file_path = os.path.join(subdirectory, datetime_as_filename)
-    return file_path
+def print_data_to_text_file(file, meteor_list):
+    """ prints to the file a line for each meteor in the meteor_list.  each meteor attribute
+        is separated by a tab character and a newline is placed after the final attribute """
+    for meteor in meteor_list:
+        all_data = vars(meteor)
+        for _, data in all_data.items():
+            file.write(f'{data.strip()}\t')
+        file.write('\n')
 
 
 def get_datetime_string():

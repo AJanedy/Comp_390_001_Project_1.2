@@ -1,8 +1,26 @@
+"""
+user_input.py
+
+This module contains functions for handling user_input.  each function returns a
+value that will be stored in the session's associated SearchCriteria class instance,
+
+Functions:
+    get_target_file_from_user() -> target_file: str
+    get_open_mode_from_user() -> open_mode: str
+    get_attribute_from_user() -> chosen_attribute: str
+    convert_chosen_attribute_to_string() -> chosen_attribute: str
+    get_lower_limit_from_user() -> lower_limit: str
+    get_upper_limit_from_user() -> upper_limit: str
+    get_output_option_from_user() -> output_option: str
+    convert_output_option_to_string() -> output_option: str
+    go_again() -> None
+"""
+
+
 from text_prompts import *
 from utility_functions import _string_is_numerical
-from search_criteria import SearchCriteria
+from search_criteria_class import SearchCriteria
 from color_class import Colors
-
 
 
 def get_target_file_from_user():
@@ -70,12 +88,12 @@ def convert_chosen_attribute_to_string(chosen_attribute):
     return chosen_attribute
 
 
-def get_lower_limit_from_user(meteor_search: SearchCriteria):
+def get_lower_limit_from_user(meteor_search):
     """ gets the user's selection for the lower limit of the search criteria
         and returns it """
 
     lower_limit_prompt(meteor_search)
-    lower_limit = input("Enter \"Q\" to quit: ")
+    lower_limit = input("Enter \"Q\" to quit: ").replace(',', '')
 
     if lower_limit == 'Q':
         quit_program()
@@ -85,12 +103,12 @@ def get_lower_limit_from_user(meteor_search: SearchCriteria):
     return lower_limit
 
 
-def get_upper_limit_from_user(meteor_search: SearchCriteria):
+def get_upper_limit_from_user(meteor_search):
     """ gets the user's selection for the upper limit of the search criteria
         and returns it """
 
     upper_limit_prompt(meteor_search)
-    upper_limit = input("Enter \"Q\" to quit: ")
+    upper_limit = input("Enter \"Q\" to quit: ").replace(',', '')
 
     if upper_limit == 'Q':
         quit_program()
@@ -134,6 +152,7 @@ def convert_output_option_to_string(output_option):
 def go_again():
     """ asks the user if they would like to run the program again, option
         to quit otherwise """
+
     go_again_prompt()
     go_again_choice = input("Press \"n\" or \"N\" to quit program, anything else to continue: ")
     print()

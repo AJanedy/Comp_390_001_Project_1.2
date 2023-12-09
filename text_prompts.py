@@ -1,6 +1,25 @@
-from search_criteria import SearchCriteria
+"""
+text_prompts.py
+
+This module contains functions for printing messages to the terminal
+
+Functions:
+    welcome_message() -> None
+    list_files_in_directory() -> list_of_files_in_directory: list[str]
+    open_mode_prompt() -> None
+    attribute_prompt() -> None
+    lower_limit_prompt -> None
+    upper_limit_prompt -> None
+    data_output_prompt() -> None
+    invalid_selection() -> None
+    quit_program() -> None
+    go_again_prompt() -> None
+"""
+
+from search_criteria_class import SearchCriteria
 from color_class import Colors
 from file_operators import search_file_directory
+
 
 def welcome_message():
     """ displays a centered welcome message to the user """
@@ -79,6 +98,7 @@ def quit_program():
     """ prints the quit message and quits the program """
 
     exit("\nExiting the program.")
+
 
 def go_again_prompt():
 

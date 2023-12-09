@@ -1,22 +1,31 @@
+"""
+main module: this script is designed to open a .txt file of the user's choosing, parse
+the data within that file, and filter out specific data as specified by the user.  It
+then takes that filtered data and outputs it as either a .txt file, a .xls file, or prints
+it to the terminal (user's choice).  .txt files and .xls files will be put in the text_files
+or excel_files subdirectory, respectively.
+"""
+
 from data_crunchers import filter_meteor_data
 from file_operators import create_list_from_file
 from generate_output import generate_user_specified_output
 from user_input import *
-from search_criteria import SearchCriteria
+from search_criteria_class import SearchCriteria
 from text_prompts import welcome_message
 
 meteor_search_criteria = SearchCriteria()
 
 
 def main():
+    """ main function of the program.  takes no arguments and loops continuously until
+        the user quits.  begins with a printed message to the terminal then calls the
+        functions related to the functionality of the program """
     welcome_message()
     while True:
         initiate_meteor_search()
         user_searched_meteor_list = filter_meteor_data(meteor_search_criteria)
         generate_user_specified_output(meteor_search_criteria, user_searched_meteor_list)
         go_again()
-
-        # TODO: Need to implement a print to terminal, make text file, make excel file feature #
 
 
 def initiate_meteor_search():

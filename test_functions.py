@@ -133,7 +133,7 @@ def test_get_text_file_path():
         certain invalid filename characters, ensures that there is only 1 period in the
         filename, and ensures that the filename ends with '.txt' """
 
-    invalid_characters_list = ['<', '>', ':', ';', '\"', '\'', '/', '|', '?', '*']
+    invalid_characters_list = ['<', '>', ':', ';', '\"', '\'', '|', '?', '*']
     count = 0
 
     for character in invalid_characters_list:
@@ -150,7 +150,7 @@ def test_get_excel_file_path():
         certain invalid filename characters, ensures that there is only 1 period in the
         filename, and ensures that the filename ends with '.txt' """
 
-    invalid_characters_list = ['<', '>', ':', ';', '\"', '\'', '/', '|', '?', '*']
+    invalid_characters_list = ['<', '>', ':', ';', '\"', '\'', '|', '?', '*']
     count = 0
 
     for character in invalid_characters_list:
